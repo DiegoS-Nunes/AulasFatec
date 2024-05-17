@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon JS/'Aula 2024 05 11'/src/server.js",
+    "start": "nodemon JS/'Aula 2024 05 11'/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
