@@ -5,6 +5,11 @@ export const createProdutoValidator = [
     body('preco').isNumeric().withMessage("Preço inválido"),
 ]
 
-export const getProdutoValidator = [
+export const updateProdutoValidator = [
+    body('descricao').optional().isString().withMessage("Descrição inválido"),
+    body('preco').optional().isNumeric().withMessage("Preço inválido"),
+]
+
+export const idProdutoValidator = [
     param("id").isNumeric().withMessage("Id Inválido")
 ]
