@@ -3,7 +3,7 @@ import { body, param } from 'express-validator'
 export const createTarefasValidator = [
     body('id').isInt().withMessage("id inválido"),
     body('descricao').isString().withMessage("Descrição inválido"),
-    body('userId').isNumeric().withMessage("userId inválido"),
+    body('userId').isInt().withMessage("userId inválido"),
 ]
 
 export const updateTarefasValidator = [
