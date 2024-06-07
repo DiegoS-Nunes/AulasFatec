@@ -1,1 +1,119 @@
-CREATE TABLE CLIENTE (    ID_Cliente INTEGER PRIMARY KEY AUTOINCREMENT,    Nome VARCHAR NOT NULL,    Endereco VARCHAR NOT NULL);CREATE TABLE P_JURIDICA (    CNPJ CHAR(18) NOT NULL UNIQUE,     IE INTEGER (9),    ID_Cliente INTEGER NOT NULL,    CONSTRAINT ID_Cliente FOREIGN KEY (ID_Cliente) REFERENCES CLIENTE (ID_Cliente));CREATE TABLE FILIAL (    ID_Filial INTEGER PRIMARY KEY AUTOINCREMENT,    Localizacao VARCHAR);CREATE TABLE P_FISICA (    CPF CHAR (14) NOT NULL UNIQUE,    Sexo BOOLEAN NOT NULL,     Nascimento CHAR (10) NOT NULL,    ID_Cliente INTEGER NOT NULL,    CONSTRAINT ID_Cliente FOREIGN KEY (ID_Cliente) REFERENCES CLIENTE (ID_Cliente));CREATE TABLE VEICULO (    Placa CHAR(7) NOT NULL UNIQUE,    N_Chassis INTEGER,     N_motor VARCHAR,     Cor VARCHAR NOT NULL,     Quilometragem INTEGER NOT NULL,    Data_Quilometragem CHAR(10) NOT NULL,     Ultima_Quilometragem INTEGER NOT NULL,    ID_Veiculo INTEGER NOT NULL,    ID_Filial INTEGER NOT NULL,    FOREIGN KEY (ID_Veiculo) REFERENCES TIPO_VEICULO(ID_Veiculo),    FOREIGN KEY (ID_Filial) REFERENCES FILIAL(ID_Filial));CREATE TABLE T_AUTOM_CAM_PASS (    Tamanho INTEGER NOT NULL,     Numero_passageiros INTEGER NOT NULL,     Ar_Condicionado BOOLEAN NOT NULL,    Radio BOOLEAN NOT NULL,     Toca_Fitas BOOLEAN NOT NULL,     CD BOOLEAN NOT NULL,     Direcao_hidraulica BOOLEAN NOT NULL,     Cambio_automatico BOOLEAN NOT NULL,    ID_Veiculo INTEGER NOT NULL,    FOREIGN KEY (ID_Veiculo) REFERENCES TIPO_VEICULO(ID_Veiculo));CREATE TABLE T_CAM_CARGA (    Capacidade_Carga INTEGER NOT NULL,    ID_Veiculo INTEGER NOT NULL,    FOREIGN KEY (ID_Veiculo) REFERENCES TIPO_VEICULO(ID_Veiculo));CREATE TABLE REVISAO (    Quilometragem INTEGER NOT NULL,    ID_Veiculo INTEGER NOT NULL,    FOREIGN KEY (ID_Veiculo) REFERENCES TIPO_VEICULO(ID_Veiculo));CREATE TABLE MOTORISTA (    Habilitacao INTEGER UNIQUE,    Data_Vencimento CHAR(10) NOT NULL,    Identidade VARCHAR NOT NULL,    Nome VARCHAR NOT NULL,    ID_Cliente INTEGER,    FOREIGN KEY (ID_Cliente) REFERENCES CLIENTE(ID_Cliente));CREATE TABLE RESERVA (    N_Reserva INTEGER UNIQUE NOT NULL,    Data_Retirada CHAR(10) NOT NULL,     Data_Devolucao CHAR(10) NOT NULL,    ID_Filial_Origem INTEGER NOT NULL,    ID_Filial_Destino INTEGER NOT NULL,    ID_Cliente INTEGER NOT NULL,    ID_Veiculo INTEGER NOT NULL,    FOREIGN KEY (ID_Filial_Origem) REFERENCES FILIAL(ID_Filial),    FOREIGN KEY (ID_Filial_Destino) REFERENCES FILIAL(ID_Filial),    FOREIGN KEY (ID_Cliente) REFERENCES CLIENTE(ID_Cliente),    FOREIGN KEY (ID_Veiculo) REFERENCES TIPO_VEICULO(ID_Veiculo));CREATE TABLE LOCACAO (    N_Locacao INTEGER UNIQUE NOT NULL,    Data_Retirada CHAR(10) NOT NULL,     Data_Devolucao CHAR(10) NOT NULL,    Placa_Veiculo CHAR(7) UNIQUE NOT NULL,    ID_Filial_Destino INTEGER UNIQUE,    Habilitacao_Motorista INTEGER UNIQUE,    FOREIGN KEY (ID_Filial_Destino) REFERENCES FILIAL(ID_Filial),    FOREIGN KEY (Placa_Veiculo) REFERENCES VEICULO(Placa),    FOREIGN KEY (Habilitacao_Motorista) REFERENCES MOTORISTA(Habilitacao));CREATE TABLE LOCADORA (    CNPJ CHAR(18) NOT NULL UNIQUE,    Nome VARCHAR NOT NULL,    Endereco VARCHAR NOT NULL,    Telefone CHAR(12));CREATE TABLE TIPO_VEICULO (    ID_Veiculo INTEGER PRIMARY KEY AUTOINCREMENT,    Tipo VARCHAR NOT NULL,     Horas_Limpeza INTEGER NOT NULL,     Quilometragem_Media_Diaria INTEGER NOT NULL);
+CREATE TABLE CLIENTE (
+    idCliente INT PRIMARY KEY IDENTITY(1,1),
+    Nome VARCHAR(254) NOT NULL,
+    Endereco VARCHAR(254) NOT NULL
+);
+
+-- Especialização de CLIENTE
+CREATE TABLE P_FISICA (
+    CPF CHAR(11) NOT NULL UNIQUE,
+    Sexo CHAR(1) NOT NULL, 
+    Nascimento DATE NOT NULL,
+    idCliente INT NOT NULL,
+    FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente)
+);
+
+-- Especialização de CLIENTE
+CREATE TABLE P_JURIDICA (
+    CNPJ CHAR(14) NOT NULL UNIQUE, 
+    IE CHAR(9) NOT NULL UNIQUE,
+    idCliente INT NOT NULL,
+    FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente)
+);
+
+CREATE TABLE FILIAL (
+    idFilial INT PRIMARY KEY IDENTITY(1,1),
+    Localizacao VARCHAR(254)
+);
+
+CREATE TABLE TIPO_VEICULO (
+    idVeiculo INT PRIMARY KEY IDENTITY(1,1),
+    Tipo VARCHAR(254) NOT NULL, 
+    horasLimpeza INT NOT NULL,
+    quilometragemMediaDiaria INT NOT NULL
+);
+
+CREATE TABLE VEICULO (
+    Placa CHAR(7) NOT NULL PRIMARY KEY,
+    NºChassis VARCHAR(254), 
+    NºMotor VARCHAR(254), 
+    Cor VARCHAR(254) NOT NULL, 
+    Quilometragem FLOAT NOT NULL,
+    dataQuilometragem DATE NOT NULL, 
+    ultimaQuilometragem FLOAT NOT NULL,
+    idVeiculo INT NOT NULL,
+    idFilial INT NOT NULL,
+    FOREIGN KEY (idVeiculo) REFERENCES TIPO_VEICULO(idVeiculo),
+    FOREIGN KEY (idFilial) REFERENCES FILIAL(idFilial)
+);
+
+-- Especialização de TIPO_VEICULO
+CREATE TABLE T_AUTOM_CAM_PASS (
+    Tamanho FLOAT NOT NULL, 
+    NºPassageiros INT NOT NULL, 
+    arCondicionado BIT NOT NULL,
+    Radio BIT NOT NULL, 
+    tocaFitas BIT NOT NULL, 
+    CD BIT NOT NULL, 
+    direcaoHidraulica BIT NOT NULL, 
+    cambioAutomatico BIT NOT NULL,
+    idVeiculo INT NOT NULL,
+    FOREIGN KEY (idVeiculo) REFERENCES TIPO_VEICULO(idVeiculo)
+);
+
+-- Especialização de TIPO_VEICULO
+CREATE TABLE T_CAM_CARGA (
+    capacidadeCarga FLOAT NOT NULL,
+    idVeiculo INT NOT NULL,
+    FOREIGN KEY (idVeiculo) REFERENCES TIPO_VEICULO(idVeiculo)
+);
+
+CREATE TABLE REVISAO (
+	NºRevisão INT NOT NULL PRIMARY KEY,
+    Quilometragem FLOAT NOT NULL,
+    idVeiculo INT NOT NULL,
+    FOREIGN KEY (idVeiculo) REFERENCES TIPO_VEICULO(idVeiculo)
+);
+
+CREATE TABLE MOTORISTA (
+    Habilitacao CHAR(11) PRIMARY KEY,
+    dataVencimento DATE NOT NULL,
+    Identidade VARCHAR(254) NOT NULL,
+    Nome VARCHAR(254) NOT NULL,
+    idCliente INT,
+    FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente)
+);
+
+CREATE TABLE RESERVA (
+    NºReserva INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    dataRetirada DATE NOT NULL, 
+    dataDevolucao DATE NOT NULL,
+    idFilialOrigem INT NOT NULL,
+    idFilialDestino INT NOT NULL,
+    idCliente INT NOT NULL,
+    idVeiculo INT NOT NULL,
+    FOREIGN KEY (idFilialOrigem) REFERENCES FILIAL(idFilial),
+    FOREIGN KEY (idFilialDestino) REFERENCES FILIAL(idFilial),
+    FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente),
+    FOREIGN KEY (idVeiculo) REFERENCES TIPO_VEICULO(idVeiculo)
+);
+
+CREATE TABLE LOCACAO (
+    NºLocacao INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    dataRetirada DATE NOT NULL, 
+    dataDevolucao DATE NOT NULL,
+    placaVeiculo CHAR(7) UNIQUE NOT NULL,
+    idFilialDestino INT NOT NULL,
+    habilitacaoMotorista CHAR(11) NOT NULL,
+    FOREIGN KEY (idFilialDestino) REFERENCES FILIAL(idFilial),
+    FOREIGN KEY (placaVeiculo) REFERENCES VEICULO(Placa),
+    FOREIGN KEY (habilitacaoMotorista) REFERENCES MOTORISTA(habilitacao)
+);
+
+-- Não se relaciona com nenhuma tabela
+CREATE TABLE LOCADORA (
+    CNPJ CHAR(14) NOT NULL PRIMARY KEY,
+    Nome VARCHAR(254) NOT NULL,
+    Endereco VARCHAR(254) NOT NULL,
+    Telefone CHAR(12)
+);
