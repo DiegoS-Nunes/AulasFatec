@@ -1,0 +1,217 @@
+insert into cliente values (0001,'Marcelo Cruz'        ,'Rua Brasil, 35'                ,'Jundiaí'        ,13124579,'SP','7464563762','53425364');
+insert into cliente values (0002,'Jose da Silva'       ,'Rua Argentina, 23'             ,'Buenos Aires'   ,45876548,'TY','4587412637','452145285');
+insert into cliente values (0003,'Mia Bini'            ,'Alameda cavalcante, 12'        ,'Pindamonhangaba',45269887,'SP','1542845798','687286464');
+insert into cliente values (0004,'Nelson Nerd'         ,'Rua das Torres, 750'           ,'Araraquara'     ,25412563,'SP','654987985','984651698');
+insert into cliente values (0005,'Rogério Silva'       ,'Avenida Castro Alves, 5500'    ,'Queluz'         ,68416845,'ES','0654987878','984165494');
+insert into cliente values (0006,'Vinicius Beto'       ,'Rua Brasil, 42'                ,'São Paulo'      ,15478452,'SP','0640968109','981651988');
+insert into cliente values (0007,'Cândido Tavares'     ,'Rua da Abolição, 350'          ,'Jundiaí'        ,13215468,'SP','0065498987','954165214');
+insert into cliente values (0008,'Uioswaldo Neto'      ,'Rua Avestruz Limpa, 80'        ,'Araraquara'     ,16789487,'PR','987654613','774465546');
+insert into cliente values (0009,'Ana Benedetti'       ,'Rua Antônio Limones, 90'       ,'Jundiaí'        ,13215045,'SP','6549879495','665421634');
+insert into cliente values (0010,'Bruno Mezenga'       ,'Rua Major Mário Lacerda, 1340' ,'Pindamonhangaba',22400485,'SP','6549684851','968762461');
+insert into cliente values (0011,'Silvia Popovic'      ,'Alameda Castro, 48'            ,'Jundiaí'        ,13215064,'SP','6324161878','416516547');
+insert into cliente values (0012,'Fausto Silva'        ,'Avenida dos Ferroviários, 2000','Queluz'         ,65498719,'SP','6547841352','654849514');
+insert into cliente values (0013,'Renata Polire'       ,'Rua do Retiro, 5400'           ,'São Paulo'      ,65491878,'PR','24165798787','165465787');
+insert into cliente values (0014,'Adamastor Tio'       ,'Rua Entre Postes, 366'         ,'Jundiaí'        ,13254687,'ES','99887958416','6321654657');
+insert into cliente values (0015,'Luke Skywalker'      ,'Rua Olivia Terceira, 240'      ,'São Paulo'      ,68423546,'SP','65495819518','3654621657');
+insert into cliente values (0016,'Plínio Castro Mendes','Rua Padre Silveira, 750'       ,'Taubaté'        ,26549879,'SP','65498498425','6598798554');
+insert into cliente values (0017,'Oswaldo Benegripe'   ,'Rua Daniel Mantovani, 987'     ,'São Paulo'      ,32416579,'PR','65498798415','6546549846');
+insert into cliente values (0018,'Adamastor Filho'     ,'Avenida Antônio Ozanam, 5543'  ,'Jundiaí'        ,13245124,'SP','44564687951','3621654477');
+insert into cliente values (0019,'Karina Bonamiga'     ,'Rua dos Expedicionários, 750'  ,'Jundiaí'        ,13244457,'SP','44798946546','9854654445');
+insert into cliente values (0020,'Vanderlei Luís Silva','Rua Brasil, 75'                ,'São Paulo'      ,11245788,'SP','65498495158','6549874988');
+
+insert into vendedor values (0001,'Sandra Bullock'    ,'A', 200);
+insert into vendedor values (0002,'Keanu Reeves'      ,'A', 500);
+insert into vendedor values (0003,'Matt Damon'        ,'B',1000);
+insert into vendedor values (0004,'Alicia Silverstone','C', 400);
+insert into vendedor values (0005,'Marilyn Monroe'    ,'B', 100);
+insert into vendedor values (0006,'Ben Affleck'       ,'A',4000);
+insert into vendedor values (0007,'Anna Nicole Smith' ,'B',2200);
+insert into vendedor values (0008,'Anna Kournikova'   ,'B', 600);
+insert into vendedor values (0009,'Paulo Zulu'        ,'C', 800);
+insert into vendedor values (0010,'Meg Ryan'          ,'A',1500);
+insert into vendedor values (0011,'Tom Cruise'        ,'B',3200);
+insert into vendedor values (0012,'Will Smith'        ,'C',  30);
+insert into vendedor values (0013,'Whitney Houston'   ,'A',1000);
+insert into vendedor values (0014,'Nicole Kidman'     ,'B',2200);
+insert into vendedor values (0015,'Nhá Barbina'       ,'A', 200);
+insert into vendedor values (0016,'Demi Moore'        ,'C',2000);
+insert into vendedor values (0017,'Sharon Stone'      ,'A',7000);
+insert into vendedor values (0018,'Carolina Dieckmann','D',1200);
+insert into vendedor values (0019,'Giovana Antonelli' ,'A', 700);
+insert into vendedor values (0020,'Kevin Costner'     ,'B', 600);
+
+insert into produto values (0001, 'Manteiga diet','UN',  3.30);
+insert into produto values (0002, 'Toddynho'     ,'UN',  1.23);
+insert into produto values (0003, 'Lapis de cor' ,'CX',  0.56);
+insert into produto values (0004, 'Barbeador'    ,'UN', 10.50);
+insert into produto values (0005, 'Leite'        ,'LT', 70.20);
+insert into produto values (0006, 'Danone'       ,'LT', 50.43);
+insert into produto values (0007, 'Alcatra'      ,'KG',140.98);
+insert into produto values (0008, 'Pinga'        ,'UN',110.50);
+insert into produto values (0009, 'Alface'       ,'UN',2.00);
+insert into produto values (0010, 'Caderno'      ,'UN',3.00);
+insert into produto values (0011, 'Óculos'       ,'UN',4.00);
+insert into produto values (0012, 'Cinto'        ,'UN',81.50);
+insert into produto values (0013, 'Camisa'       ,'UN',  0.50);
+insert into produto values (0014, 'Sapato'       ,'UN', 10.50);
+insert into produto values (0015, 'Relógio'      ,'UN', 50.00);
+insert into produto values (0016, 'Escada'       ,'MT', 90.75);
+insert into produto values (0017, 'Porta'        ,'UN',210.50);
+insert into produto values (0018, 'Impressora'   ,'UN',610.50);
+insert into produto values (0019, 'Água'         ,'LT', 80.50);
+insert into produto values (0020, 'Telefone'     ,'UN', 60.00);
+
+INSERT INTO cliente (Cod_cliente, Nome_cliente, Endereco, Cidade, Cep, UF, CPF_CGC, IE) VALUES
+(1, 'Maria Silva', 'Rua A', 'Sorocaba', '18000000', 'SP', '12345678901', '1234567890'),
+(2, 'João da Silva', 'Rua B', 'Itu', '13300000', 'SP', '23456789012', '2345678901'),
+(3, 'Pedro Oliveira', 'Rua C', 'Sorocaba', '18000001', 'SP', '34567890123', '3456789012'),
+(4, 'Ana Paula', 'Rua D', 'Itu', '13300001', 'SP', '45678901234', '4567890123'),
+(5, 'Ciclano da Silva', 'Rua E', 'Sorocaba', '18000002', 'SP', '56789012345', '5678901234'),
+(6, 'Bruno Santos', 'Rua F', 'Itu', '13300002', 'SP', '67890123456', '6789012345'),
+(7, 'Carla Mendes', 'Rua G', 'Sorocaba', '18000003', 'SP', '78901234567', '7890123456'),
+(8, 'Diego Costa', 'Rua H', 'Itu', '13300003', 'SP', '89012345678', '8901234567'),
+(9, 'Eduardo Lima', 'Rua I', 'Sorocaba', '18000004', 'SP', '90123456789', '9012345678'),
+(10, 'Fernanda Alves', 'Rua J', 'Itu', '13300004', 'SP', '01234567890', '0123456789');
+
+INSERT INTO vendedor (cod_vendedor, nome_vendedor, faixa_comissao, salario_fixo) VALUES
+(1, 'Fulano Antonio', 'A', 3000),
+(2, 'Beltrano Souza', 'B', 3500),
+(3, 'Ciclano Alberto', 'C', 4000),
+(4, 'Alôncio Pimentão', 'A', 3200),
+(5, 'Juliana Pereira', 'B', 3700);
+
+INSERT INTO produto (cod_produto, descricao, Unidade, Valor_unitario) VALUES
+(101, 'Manteiga diet', 'UN', 10.00),
+(102, 'Toddynho', 'UN', 20.00),
+(103, 'Lapis de cor', 'UN', 30.00),
+(104, 'Barbeador', 'UN', 40.00),
+(105, 'Leite', 'UN', 50.00),
+(106, 'Danone', 'UN', 60.00),
+(107, 'Pinga', 'UN', 70.00),
+(108, 'Alface', 'UN', 80.00),
+(109, 'Caderno', 'UN', 90.00),
+(110, 'Óculos', 'UN', 100.00);
+
+INSERT INTO pedido (Num_pedido, data_compra, data_entrega, cod_cliente, cod_vendedor) VALUES
+(1, '2024-01-01', '2024-01-10', 1, 1),
+(2, '2024-01-05', '2024-01-15', 2, 2),
+(3, '2024-01-10', '2024-01-20', 3, 3),
+(4, '2024-01-15', '2024-01-25', 4, 4),
+(5, '2024-01-20', '2024-01-30', 5, 5),
+(6, '2024-01-25', '2024-02-05', 6, 1),
+(7, '2024-02-01', '2024-02-10', 7, 2),
+(8, '2024-02-05', '2024-02-15', 8, 3),
+(9, '2024-02-10', '2024-02-20', 9, 4),
+(10, '2024-02-15', '2024-02-25', 10, 5),
+(11, '2024-02-20', '2024-03-01', 1, 1),
+(12, '2024-02-25', '2024-03-05', 2, 2),
+(13, '2024-03-01', '2024-03-10', 3, 3),
+(14, '2024-03-05', '2024-03-15', 4, 4),
+(15, '2024-03-10', '2024-03-20', 5, 5),
+(16, '2024-03-15', '2024-03-25', 6, 1),
+(17, '2024-03-20', '2024-03-30', 7, 2),
+(18, '2024-03-25', '2024-04-05', 8, 3),
+(19, '2024-04-01', '2024-04-10', 9, 4),
+(20, '2024-04-05', '2024-04-15', 10, 5),
+(21, '2024-04-10', '2024-04-20', 1, 1),
+(22, '2024-04-15', '2024-04-25', 2, 2),
+(23, '2024-04-20', '2024-05-01', 3, 3),
+(24, '2024-04-25', '2024-05-05', 4, 4),
+(25, '2024-05-01', '2024-05-10', 5, 5),
+(26, '2024-05-05', '2024-05-15', 6, 1),
+(27, '2024-05-10', '2024-05-20', 7, 2),
+(28, '2024-05-15', '2024-05-25', 8, 3),
+(29, '2024-05-20', '2024-05-30', 9, 4),
+(30, '2024-05-25', '2024-06-04', 10, 5);
+
+INSERT INTO item_pedido (num_pedido, cod_produto, quantidade) VALUES
+(1, 101, 10),
+(1, 102, 20),
+(1, 103, 15),
+(2, 104, 5),
+(2, 105, 8),
+(2, 106, 12),
+(3, 107, 6),
+(3, 108, 14),
+(3, 109, 10),
+(4, 110, 7),
+(4, 101, 9),
+(4, 102, 3),
+(5, 103, 4),
+(5, 104, 15),
+(5, 105, 8),
+(6, 106, 20),
+(6, 107, 25),
+(6, 108, 18),
+(7, 109, 12),
+(7, 110, 14),
+(7, 101, 5),
+(8, 102, 7),
+(8, 103, 10),
+(8, 104, 6),
+(9, 105, 9),
+(9, 106, 8),
+(9, 107, 12),
+(10, 108, 15),
+(10, 109, 18),
+(10, 110, 20),
+(11, 101, 22),
+(11, 102, 25),
+(11, 103, 10),
+(12, 104, 15),
+(12, 105, 20),
+(12, 106, 22),
+(13, 107, 30),
+(13, 108, 35),
+(13, 109, 40),
+(14, 110, 45),
+(14, 101, 50),
+(14, 102, 55),
+(15, 103, 60),
+(15, 104, 65),
+(15, 105, 70),
+(16, 106, 75),
+(16, 107, 80),
+(16, 108, 85),
+(17, 109, 90),
+(17, 110, 95),
+(17, 101, 100),
+(18, 102, 105),
+(18, 103, 110),
+(18, 104, 115),
+(19, 105, 120),
+(19, 106, 125),
+(19, 107, 130),
+(20, 108, 135),
+(20, 109, 140),
+(20, 110, 145),
+(21, 101, 150),
+(21, 102, 155),
+(21, 103, 160),
+(22, 104, 165),
+(22, 105, 170),
+(22, 106, 175),
+(23, 107, 180),
+(23, 108, 185),
+(23, 109, 190),
+(24, 110, 195),
+(24, 101, 200),
+(24, 102, 205),
+(25, 103, 210),
+(25, 104, 215),
+(25, 105, 220),
+(26, 106, 225),
+(26, 107, 230),
+(26, 108, 235),
+(27, 109, 240),
+(27, 110, 245),
+(27, 101, 250),
+(28, 102, 255),
+(28, 103, 260),
+(28, 104, 265),
+(29, 105, 270),
+(29, 106, 275),
+(29, 107, 280),
+(30, 108, 285),
+(30, 109, 290),
+(30, 110, 295);
