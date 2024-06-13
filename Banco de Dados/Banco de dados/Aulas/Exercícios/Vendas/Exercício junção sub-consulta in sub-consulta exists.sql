@@ -370,13 +370,12 @@ HAVING SUM(ip.quantidade * pr.Valor_unitario) > 10000;
 UPDATE vendedor
 SET salario_fixo = salario_fixo * 1.05
 WHERE cod_vendedor IN (
-    SELECT v.cod_vendedor
-    FROM vendedor v
-    INNER JOIN pedido p ON p.cod_vendedor = v.cod_vendedor
+    SELECT p.cod_vendedor
+    FROM pedido p
     INNER JOIN item_pedido ip ON ip.num_pedido = p.Num_pedido
     INNER JOIN produto pr ON pr.cod_produto = ip.cod_produto
     WHERE MONTH(p.data_compra) = 10 AND YEAR(p.data_compra) = YEAR(GETDATE())
-    GROUP BY v.cod_vendedor
+    GROUP BY p.cod_vendedor
     HAVING SUM(ip.quantidade * pr.Valor_unitario) > 10000
 );
 
@@ -405,16 +404,15 @@ FROM vendedor v
 INNER JOIN pedido p ON p.cod_vendedor = v.cod_vendedor
 INNER JOIN item_pedido ip ON ip.num_pedido = p.Num_pedido
 INNER JOIN produto pr ON pr.cod_produto = ip.cod_produto
-GROUP BY v.nome_vendedor
+GROUP BY v.cod_vendedor, v.nome_vendedor
 HAVING AVG(ip.quantidade * pr.Valor_unitario) > (
     SELECT AVG(mediaVendas)
     FROM (
         SELECT AVG(ip.quantidade * pr.Valor_unitario) AS mediaVendas
-        FROM vendedor v
-        INNER JOIN pedido p ON p.cod_vendedor = v.cod_vendedor
+        FROM pedido p
         INNER JOIN item_pedido ip ON ip.num_pedido = p.Num_pedido
         INNER JOIN produto pr ON pr.cod_produto = ip.cod_produto
-        GROUP BY v.cod_vendedor
+        GROUP BY p.cod_vendedor
     ) AS subquery
 );
 
