@@ -1,0 +1,5 @@
+Lean and Agile
+
+ - Business support systems (BSS)
+
+ - Operations support systems (OSS)

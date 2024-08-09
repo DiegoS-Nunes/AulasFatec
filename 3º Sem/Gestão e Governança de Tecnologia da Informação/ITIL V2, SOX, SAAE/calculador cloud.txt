@@ -1,0 +1,5 @@
+BareMetal
+https://cloud.ibm.com/gen1/infrastructure/provision/bm
+
+Classic (VM)
+https://cloud.ibm.com/gen1/infrastructure/provision/vs
