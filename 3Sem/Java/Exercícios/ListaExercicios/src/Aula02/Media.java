@@ -1,3 +1,4 @@
+//Lista 1 ex.2
 //2. Faça uma classe que peça as 3 notas bimestrais e mostre a média.
 
 package Aula02;

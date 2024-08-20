@@ -1,10 +1,13 @@
-package Aula02;
+//Lista 1 ex.9
+//Tendo como dados de entrada a altura de uma pessoa, 
+//construa um algoritmo que calcule seu peso ideal, 
+//usando a seguinte fórmula: (72.7*altura) - 58 
 
-//Tendo como dados de entrada a altura de uma pessoa, construa um algoritmo que calcule seu peso ideal, usando a seguinte fórmula: (72.7*altura) - 58 
+package Aula02;
 
 import java.util.Scanner;
 
-public class Altura {
+public class PesoIdeal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

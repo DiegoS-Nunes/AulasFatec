@@ -1,8 +1,8 @@
+//Lista 2 ex.1
+//Faça uma aplicação para receber um número qualquer e informar na tela se é par ou ímpar
 package Aula02;
 
 import java.util.Scanner;
-
-//Faça uma aplicação para receber um número qualquer e informar na tela se é par ou ímpar
 
 public class ParOuImpar {
     public static void main(String[] args) {
