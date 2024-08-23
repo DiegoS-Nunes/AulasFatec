@@ -1,41 +1,43 @@
-//Lista 2 ex.4
-//Faça uma aplicação que leia três números e mostre a média entre eles somente se todos forem positivos. 
-//Caso haja algum número negativo apresente a mensagem “A média não pode ser calculada”.
 package Aula02;
 
 import java.util.Scanner;
 
 public class MediaPositivos {
     public static void main(String[] args) {
-        Scanner scan= new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         
         System.out.println("Quantos números quer inserir?");
-        int qtd_val= scan.nextInt();
-        double[] vals= new double[qtd_val];
+        int qtd_val = scan.nextInt();
+        double[] vals = new double[qtd_val];
+        double soma = 0;
+        boolean hasNegative = false;
 
-        for(int i=0; i<qtd_val; i++){
-            System.out.printf("Digite o %d número: ",i+1);
-            vals[i]= scan.nextDouble();
+        for (int i = 0; i < qtd_val; i++) {
+            System.out.printf("Digite o %d número: ", i + 1);
+            vals[i] = scan.nextDouble();
+
+            if (vals[i] < 0) {
+                hasNegative = true;
+            }
+            soma += vals[i];
         }
 
         scan.close();
 
-        public static double printVals (double[] vals) {
-            for(double val: vals){
-                System.out.println(val);
-            }
-        }
+        printVals(vals); // Chama o método para imprimir os valores
 
-        for(double val: vals){
-            double soma = 0+val;
-            if (val<0){
-                System.out.println("A média não pode ser calculado devido valor negativo!!");
-                printVals();
-                break;
-            }
-            
-            double media = soma/vals.length;
-            System.out.println("A média dos números é: "+media);
+        if (hasNegative) {
+            System.out.println("A média não pode ser calculada devido a valor negativo!");
+        } else {
+            double media = soma / vals.length;
+            System.out.printf("A média dos números é: %.2f%n", media);
+        }
+    }
+
+    public static void printVals(double[] vals) {
+        System.out.println("Valores inseridos:");
+        for (double val : vals) {
+            System.out.println(val);
         }
     }
 }
