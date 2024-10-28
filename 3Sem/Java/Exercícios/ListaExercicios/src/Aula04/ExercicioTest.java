@@ -1,8 +1,5 @@
 package Aula04;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class ExercicioTest {
     public static void main(String[] args) {
         //Exercicio.letras("Eu amo Java demais!!");
